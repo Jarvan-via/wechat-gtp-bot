@@ -8,8 +8,8 @@ https://openai.com
 
 ### 导入环境变量
 ```
-export TOKEN=your token
-export APIKEY=your API KEY
+export TOKEN=your TOKEN
+export APIKEY=your APIKEY
 ```
 
 ### 安装依赖并启动项目
