@@ -225,8 +225,9 @@ export async function dingDongBot(message: Message) {
         presence_penalty: 0,
       });
 
-      const res: any = response.data.choices[0].text
-      await message.room().say(res.trim());
+      const answer: any = response.data.choices[0].text
+      const res = `${question}\n----------------------\n${answer.trim()}`
+      await message.room().say(res);
     }
   } catch (error) {
     console.error(error)
