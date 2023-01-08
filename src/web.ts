@@ -210,7 +210,7 @@ export async function dingDongBot(message: Message) {
 
     const groupName: any = ['ChatGPT']
     const msg = message.text()
-    const topic = await message.room()?.topic()
+    const topic = await message.room().topic()
 
     if ((groupName.includes(topic) && msg.startsWith('openai'))) {
 
@@ -226,7 +226,7 @@ export async function dingDongBot(message: Message) {
       });
 
       const res: any = response.data.choices[0].text
-      await message.room()?.say(res.trim());
+      await message.room().say(res.trim());
     }
   } catch (error) {
     console.error(error)

@@ -1,18 +1,11 @@
 # wechat-gtp-bot
-
 微信群接入chatGTP自动问答机器人
-### 获取token
-http://pad-local.com/#/tokens
+
+## web
 ### 获取openai APIKEY
 https://openai.com
 
-### 导入环境变量
-```
-export TOKEN=your TOKEN
-export APIKEY=your APIKEY
-```
-
-### 安装依赖并启动项目
+### 安装依赖启动项目
 ```
 npm i
 npm install typescript -g
