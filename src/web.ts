@@ -211,7 +211,7 @@ export async function dingDongBot(message: Message) {
     const startsWith = 'openai'
 
     const msg = message.text()
-    const topic = await message.room().topic()
+    const topic = await message.room()?.topic()
 
     if ((groupName.includes(topic) && msg.startsWith(startsWith))) {
 
@@ -228,7 +228,7 @@ export async function dingDongBot(message: Message) {
 
       const answer: any = response.data.choices[0].text
       const res = `${question}\n----------------------\n${answer.trim()}`
-      await message.room().say(res);
+      await message.room()?.say(res);
     }
   } catch (error) {
     console.error(error)
