@@ -207,14 +207,15 @@ export async function dingDongBot(message: Message) {
       apiKey: '',
     });
     const openai = new OpenAIApi(configuration);
+    const groupName = ['ChatGPT']
+    const startsWith = 'openai'
 
-    const groupName: any = ['ChatGPT']
     const msg = message.text()
     const topic = await message.room().topic()
 
-    if ((groupName.includes(topic) && msg.startsWith('openai'))) {
+    if ((groupName.includes(topic) && msg.startsWith(startsWith))) {
 
-      let question = msg.split('openai')[1]
+      let question = msg.split(startsWith)[1]
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `${question}?`,
